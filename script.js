@@ -8,11 +8,13 @@ var userName = params.get(`username`);
           let div = document.createElement('div');
           div.innerHTML =  'Информация о пользователе отсутствует';
           document.body.appendChild(div);
+          div.style.fontSize = "30px";
         } else {
-            let nickName = document.createElement('h2');
+            let nickName = document.createElement('a');
             nickName.setAttribute('href', json.html_url);
             nickName.innerHTML = json.name;
             document.body.appendChild(nickName);
+            nickName.style.fontSize = "40px";
 
             let userInfo = document.createElement('div');
             userInfo.innerHTML = json.bio;
@@ -25,6 +27,7 @@ var userName = params.get(`username`);
       })
   } else {
       let div = document.createElement('div');
-      div.innerHTML = 'Введите данные';
+      div.innerHTML = 'Введите данные в URL';
       document.body.appendChild(div);
+      div.style.fontSize = "40px";
   }
